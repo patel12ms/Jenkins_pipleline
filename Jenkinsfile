@@ -5,25 +5,25 @@ pipeline{
         // week1-day2-abhishek-jenkins-pipeline-assignment
         stage('compile'){
             steps {
-                echo 'compiling...'
+                bat 'mvn clean compile'
             }
         }
         
         stage('unit test'){
             steps {
-                echo 'running unit tests...'
+                bat 'mvn test'
             }
         }
         
         stage('build'){
             steps {
-                echo 'creating jar...'
+                bat 'mvn-DskipTests package'
             }
         }
         
         stage('image'){
             steps {
-                echo 'creating docker image...'
+                bat 'creating docker image'
             }
         }
 
